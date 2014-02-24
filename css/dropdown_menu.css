@@ -1,0 +1,89 @@
+#menu {
+	width:100%;
+	float:left;
+}
+		
+#menu a {
+	display:block;
+	border: 1px solid #50798f;
+	white-space:nowrap;
+	margin:0;
+	padding: 0.3em;
+}
+	
+#menu a:link,
+#menu a:visited,
+#menu a:active {
+	color: white;
+	background-color: #50798f;
+	text-decoration:none;
+}
+	
+#menu a:hover {
+	color: white;
+	text-decoration:none;
+}	
+	
+#menu a.top_parent,
+#menu a.top_parent:hover {  /* attaches down-arrow to all top-parents */
+	background-image: url(../img/menu/nav-arrow-down.png);
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+	
+#menu a.parent,
+#menu a.parent:hover { 	/* attaches side-arrow to all parents */
+	background-image: url(../img/menu/nav-arrow-right.png);
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+
+#menu ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+	float:left;
+	width:170px;	/* width of all menu boxes */
+	/* NOTE: For adjustable menu boxes you can comment out the above width rule.
+	However, you will have to add padding in the "#menh a" rule so that the menu boxes
+	will have space on either side of the text -- try it */
+}
+
+#menu li {
+	position:relative;
+	min-height: 1px;		/* contribution for IE7 */
+	vertical-align: bottom;		/* contribution for IE7 */
+}
+
+#menu ul ul {
+	position:absolute;
+	z-index:500;
+	top:auto;
+	display:none;
+	padding: 1em;
+	margin:-1em 0 0 -1em;
+}
+
+#menu ul ul ul {
+	top:0;
+	left:100%;
+}
+
+div#menu li:hover {
+	cursor:pointer;
+	z-index:100;
+}
+
+div#menu li:hover ul ul,
+div#menu li li:hover ul ul,
+div#menu li li li:hover ul ul,
+div#menu li li li li:hover ul ul {
+	display:none;
+}
+
+div#menu li:hover ul,
+div#menu li li:hover ul,
+div#menu li li li:hover ul,
+div#menu li li li li:hover ul {
+	display:block;
+}
